@@ -86,12 +86,6 @@
         android:title="@string/screensaver_settings_title"
         android:fragment="com.android.settings.dream.DreamSettings" />
 
-    <!-- Cross-listed item, if you change this, also change it in power_usage_summary.xml -->
-    <Preference
-        android:key="ambient_display"
-        android:title="@string/ambient_display_screen_title"
-        android:fragment="com.android.settings.display.AmbientDisplaySettings" />
-
     <!-- Hide night mode for now
     <ListPreference
         android:key="night_mode"
@@ -125,4 +119,28 @@
         android:title="@string/display_vr_pref_title"
         android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
 
+    <!-- Cross-listed item, if you change this, also change it in power_usage_summary.xml -->
+    <Preference
+        android:key="custom_doze"
+        android:title="@string/doze_title"
+        android:summary="@string/doze_summary" >
+        <intent android:action="org.cyanogenmod.settings.device.DOZE_SETTINGS" />
+    </Preference>
+
+    <PreferenceCategory
+        android:key="doze_category"
+        android:title="@string/doze_category">
+
+        <Preference
+            android:key="ambient_display"
+            android:title="@string/ambient_display_screen_title"
+            android:fragment="com.android.settings.display.AmbientDisplaySettings" />
+
+        <com.android.settings.preference.SecureSettingSwitchPreference
+            android:key="doze_always_on"
+            android:title="@string/always_on_title"
+            android:summary="@string/always_on_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
