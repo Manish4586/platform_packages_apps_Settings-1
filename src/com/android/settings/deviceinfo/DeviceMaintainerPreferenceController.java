@@ -23,9 +23,11 @@ import android.support.v7.preference.PreferenceScreen;
 import android.text.TextUtils;
 
 import com.android.settings.R;
-import com.android.settings.core.PreferenceController;
+import com.android.settings.core.PreferenceControllerMixin;
+import com.android.settingslib.core.AbstractPreferenceController;
 
-public class DeviceMaintainerPreferenceController extends PreferenceController {
+public class DeviceMaintainerPreferenceController extends AbstractPreferenceController
+    implements PreferenceControllerMixin {
 
     private static final String PROPERTY_DEVICE_MAINTAINERS = "ro.device.maintainer";
     private static final String KEY_DEVICE_MAINTAINERS = "device_maintainer";
